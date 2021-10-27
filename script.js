@@ -29,8 +29,8 @@ function addLink() {
     i++;
 }
 
-link.addEventListener('mousemove', addLink.bind(link));
-link.removeEventListener('mouseout', addLink.bind(link));
+link.addEventListener('mousemove', addLink);
+link.removeEventListener('mouseout', addLink);
 
 // _______________________________________________________________________________________
 
@@ -52,9 +52,9 @@ const inputs = {
     }
 }
 
-inputs[0].addEventListener('focusout', inputs.Write0.bind(inputs));
-inputs[1].addEventListener('focusout', inputs.Write1.bind(inputs));
-inputs[2].addEventListener('focusout', inputs.Write2.bind(inputs));
+inputs[0].addEventListener('focusout', inputs.Write0);
+inputs[1].addEventListener('focusout', inputs.Write1);
+inputs[2].addEventListener('focusout', inputs.Write2);
 
 // _______________________________________________________________________________________
 let q = 0;
@@ -155,6 +155,6 @@ let divs = {
 //     }
 // }
 
-divs[0].addEventListener('click', divs.Paint0.bind(inputs));
-divs[1].addEventListener('click', divs.Paint1.bind(inputs));
-divs[2].addEventListener('click', divs.Paint2.bind(inputs));
+divs[0].addEventListener('click', divs.Paint0);
+divs[1].addEventListener('click', divs.Paint1);
+divs[2].addEventListener('click', divs.Paint2);
