@@ -1,18 +1,9 @@
-let img = document.querySelectorAll('img');
-let images = {
-    0: img[0],
-    1: img[1],
-    2: img[2],
-}
+let container = document.querySelector('.container');
 
-img[0].onclick = function(){
-    alert(images[0].getAttribute('src'));
-}
-img[1].onclick = function(){
-    alert(images[1].getAttribute('src')); 
-}
-img[2].onclick = function(){
-    alert(images[2].getAttribute('src')); 
+for(let a of container.getElementsByClassName('img')){
+    a.onclick = function(){
+        alert(a.getAttribute('src'));
+    }
 }
 
 // _______________________________________________________________________________________
@@ -24,7 +15,6 @@ let i = 0;
 function addLink() {
     if (i === 0) {
         link.textContent += '   ' + href;
-        console.log(href);
     }
     i++;
 }
@@ -34,49 +24,31 @@ link.removeEventListener('mouseout', addLink);
 
 // _______________________________________________________________________________________
 
-let input = document.querySelectorAll('input');
+let inputs = document.querySelector('.inputs');
 let paragraph = document.getElementById('text');
-const inputs = {
-    0: input[0],
-    1: input[1],
-    2: input[2],
 
-    Write0() {
-        paragraph.innerHTML = inputs[0].value;
-    },
-    Write1() {
-        paragraph.innerHTML = inputs[1].value;
-    },
-    Write2() {
-        paragraph.innerHTML = inputs[2].value;
-    }
+let Write = function() {
+    paragraph.innerHTML = this.value;
 }
 
-inputs[0].addEventListener('focusout', inputs.Write0);
-inputs[1].addEventListener('focusout', inputs.Write1);
-inputs[2].addEventListener('focusout', inputs.Write2);
+for(let z of inputs.getElementsByTagName('input')){
+    z.addEventListener('focusout', Write);
+}
 
 // _______________________________________________________________________________________
-let q = 0;
-let w = 0;
-let e = 0;
-inputs[0].onclick = function(){
-    if(q === 0){
-        alert(inputs[0].value);
-        q++;
-    }
 
+let q = 0;
+
+let WriteValue = function(){
+    if(q === 0){
+        console.log(this.value);
+        q++;
+    } 
 }
-inputs[1].onclick = function(){
-    if(w === 0){
-        alert(inputs[1].value);
-        w++;
-    }
-}
-inputs[2].onclick = function(){
-    if(e === 0){
-        alert(inputs[2].value);
-        e++;
+
+inputs.onclick = function(){
+    for(let y of inputs.getElementsByTagName('input')){
+        y.addEventListener('click', WriteValue);  
     }
 }
 
@@ -88,8 +60,6 @@ numberInput.onclick = function(){
 }
 
 // _______________________________________________________________________________________
-
-let container = document.querySelector('.container');
 
 let PaintRed = function(){
     this.style.backgroundColor = 'red';
