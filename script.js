@@ -89,38 +89,25 @@ numberInput.onclick = function(){
 
 // _______________________________________________________________________________________
 
-let div = document.querySelectorAll('.image');
-let divs = {
-    0: div[0],
-    1: div[1],
-    2: div[2],
+let container = document.querySelector('.container');
 
-    Paint0() {
-        divs[0].classList.add('green');
-        if(divs[0].classList.contains('red')){
-            divs[0].classList.replace('red', 'green');
+let PaintRed = function(){
+    this.style.backgroundColor = 'red';
+}
+let PaintGreen = function(){
+    this.style.backgroundColor = 'green';
+}
+
+container.onclick = function(){
+    for (let i of container.getElementsByClassName('image')) {
+        if(i.getAttribute('style') === 'background-color: red;'){
+            i.removeEventListener('click', PaintRed);
+            i.addEventListener('click', PaintGreen);
+        } else if(i.getAttribute('style') === 'background-color: green;'){
+            i.removeEventListener('click', PaintGreen);
+            i.addEventListener('click', PaintRed);
         } else{
-            divs[0].classList.replace('green', 'red');
-        }
-    },
-    Paint1() {
-        divs[1].classList.add('green');
-        if(divs[1].classList.contains('red')){
-            divs[1].classList.replace('red', 'green');
-        } else{
-            divs[1].classList.replace('green', 'red');
-        }
-    },
-    Paint2() {
-        divs[2].classList.add('green');
-        if(divs[2].classList.contains('red')){
-            divs[2].classList.replace('red', 'green');
-        } else{
-            divs[2].classList.replace('green', 'red');
+            i.addEventListener('click', PaintRed);
         }
     }
 }
-
-divs[0].addEventListener('click', divs.Paint0);
-divs[1].addEventListener('click', divs.Paint1);
-divs[2].addEventListener('click', divs.Paint2);
