@@ -41,7 +41,7 @@ let q = 0;
 
 let WriteValue = function(){
     if(q === 0){
-        console.log(this.value);
+        alert(this.value);
         q++;
     } 
 }
