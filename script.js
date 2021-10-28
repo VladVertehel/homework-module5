@@ -1,4 +1,6 @@
-for(let a of document.getElementsByClassName('img')){
+let container = document.querySelector('.container');
+
+for(let a of container.getElementsByClassName('img')){
     a.onclick = function(){
         alert(a.getAttribute('src'));
     }
@@ -22,19 +24,18 @@ link.removeEventListener('mouseout', addLink);
 
 // _______________________________________________________________________________________
 
+let inputs = document.querySelector('.inputs');
 let paragraph = document.getElementById('text');
 
 let Write = function() {
     paragraph.innerHTML = this.value;
 }
 
-for(let z of document.getElementsByTagName('input')){
+for(let z of inputs.getElementsByTagName('input')){
     z.addEventListener('focusout', Write);
 }
 
 // _______________________________________________________________________________________
-
-let inputs = document.querySelector('.inputs');
 
 let q = 0;
 
@@ -46,7 +47,7 @@ let WriteValue = function(){
 }
 
 inputs.onclick = function(){
-    for(let y of document.getElementsByTagName('input')){
+    for(let y of inputs.getElementsByTagName('input')){
         y.addEventListener('click', WriteValue);  
     }
 }
@@ -61,8 +62,6 @@ numberInput.onclick = function(){
 
 // _______________________________________________________________________________________
 
-let container = document.querySelector('.container');
-
 let PaintRed = function(){
     this.style.backgroundColor = 'red';
 }
@@ -71,7 +70,7 @@ let PaintGreen = function(){
 }
 
 container.onclick = function(){
-    for (let i of document.getElementsByClassName('image')) {
+    for (let i of container.getElementsByClassName('image')) {
         if(i.getAttribute('style') === 'background-color: red;'){
             i.removeEventListener('click', PaintRed);
             i.addEventListener('click', PaintGreen);
