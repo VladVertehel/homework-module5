@@ -95,65 +95,31 @@ let divs = {
     1: div[1],
     2: div[2],
 
-    // PaintRed() {
-    //     div[0].classList.add('red');
-    //     div[1].classList.add('red');
-    //     div[2].classList.add('red');
-    // },
-    // PaintGreen() {
-    //     div[0].classList.add('green');
-    //     div[1].classList.add('green');
-    //     div[2].classList.add('green');
-    // }
     Paint0() {
-        divs[0].classList.add('red');
-        if(divs[0].classList.contains('green')){
-            divs[0].classList.replace('green', 'red');
-        } else{
+        divs[0].classList.add('green');
+        if(divs[0].classList.contains('red')){
             divs[0].classList.replace('red', 'green');
+        } else{
+            divs[0].classList.replace('green', 'red');
         }
     },
     Paint1() {
-        divs[1].classList.add('red');
-        if(divs[1].classList.contains('green')){
-            divs[1].classList.replace('green', 'red');
-        } else{
+        divs[1].classList.add('green');
+        if(divs[1].classList.contains('red')){
             divs[1].classList.replace('red', 'green');
+        } else{
+            divs[1].classList.replace('green', 'red');
         }
     },
     Paint2() {
-        divs[2].classList.add('red');
-        if(divs[2].classList.contains('green')){
-            divs[2].classList.replace('green', 'red');
-        } else{
+        divs[2].classList.add('green');
+        if(divs[2].classList.contains('red')){
             divs[2].classList.replace('red', 'green');
+        } else{
+            divs[2].classList.replace('green', 'red');
         }
     }
 }
-
-// divs[0].onclick = function(){
-//     if(divs[0].classList.contains('green')){
-//         divs[0].classList.remove('green');
-//         divs.PaintRed();
-//     } else{
-//         divs.PaintRed();
-//     }
-// }
-// divs[0].ondblclick = function(){
-//     if(divs[0].classList.contains('red')){
-//         divs[0].classList.remove('red');
-//         divs.PaintGreen();
-//     }
-// }
-
-// divs[0].onclick = function(){
-//     divs[0].classList.add('red');
-//     if(divs[0].classList.contains('green')){
-//         divs[0].classList.replace('green', 'red');
-//     } else{
-//         divs[0].classList.replace('red', 'green');
-//     }
-// }
 
 divs[0].addEventListener('click', divs.Paint0);
 divs[1].addEventListener('click', divs.Paint1);
